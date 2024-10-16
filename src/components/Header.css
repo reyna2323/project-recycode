@@ -1,0 +1,104 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #044014; /* Dark green background */
+    padding: 1rem 2rem;
+    position: relative;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow this section to grow */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white; /* White text */
+}
+
+.logo h1 {
+    font-family: 'FuturaBold', sans-serif; /* Ensure the font is applied */
+    font-size: 2.5rem; /* Adjust size as needed */
+    margin-right: 1rem; /* Space between text and logo */
+}
+
+.logo-img {
+    width: 50px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure menu icon is positioned on the right */
+.menu-icon {
+    cursor: pointer; /* Pointer cursor for the menu icon */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px; /* Width of the menu icon */
+    height: 30px; /* Height of the menu icon */
+    margin-left: auto; /* Push it to the right */
+}
+
+/* Menu lines */
+.line {
+    height: 3px; /* Height of each line */
+    background-color: white; /* White lines */
+    width: 100%; /* Full width of the icon */
+}
+
+/* Adjust nav menu */
+.nav-menu {
+    position: fixed; /* Change to fixed */
+    top: 0;
+    right: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 250px; /* Width of the menu */
+    background-color: #f9f9f9; /* Off-white background */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease; /* Animation for sliding */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.nav-menu.open {
+    transform: translateX(0); /* Slide in menu when open */
+}
+
+.nav-menu ul {
+    list-style: none; /* No bullet points */
+    padding: 2rem; /* Padding for the menu items */
+}
+
+.nav-menu ul li {
+    margin: 1rem 0; /* Space between menu items */
+}
+
+.nav-menu ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #044014; /* Dark green text */
+    font-size: 1.5rem; /* Size of the menu item text */
+}
+
+/* Close button styling */
+.close-menu {
+    background: none;
+    border: none;
+    color: #044014; /* Dark green text */
+    font-size: 1.5rem;
+    cursor: pointer; /* Pointer cursor */
+    margin: 1rem; /* Space for the button */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem; /* Smaller font on smaller screens */
+    }
+    .nav-menu {
+        width: 200px; /* Adjust width for mobile */
+    }
+}

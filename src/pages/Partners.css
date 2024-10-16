@@ -1,0 +1,27 @@
+.partners-container {
+  text-align: center; /* Center the text */
+  margin: 2rem 0; /* Space above and below the section */
+  background-color: #f8f8f8; /* Off-white background */
+  padding: 2rem; /* Padding for the container */
+  border-radius: 8px; /* Optional: round edges */
+}
+
+.partners-logos {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center logos horizontally */
+  gap: 2rem; /* Space between logos */
+}
+
+.partner-logo {
+  height: 100px; /* Set a fixed height for all logos */
+  object-fit: contain; /* Maintain aspect ratio */
+  width: auto; /* Allow width to adjust based on height */
+}
+
+/* New styles for the acknowledgment text */
+.partners-container h2 {
+  font-family: 'FuturaBold', sans-serif; /* Use the imported font */
+  font-size: 2rem; /* Increase size for better visibility */
+  color: #044014; /* Dark green text color */
+  margin-bottom: 1.5rem; /* Space below the heading */
+}

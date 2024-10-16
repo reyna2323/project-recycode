@@ -1,0 +1,91 @@
+@keyframes scroll-background {
+    from {
+      background-position: center bottom; /* Start from bottom */
+    }
+    to {
+      background-position: center top; /* End at top */
+    }
+  }
+  
+  .home-hero {
+    position: relative; /* Position for the overlay */
+    background-image: url('../assets/background.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure it covers the entire container */
+    background-position: center; 
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Center text */
+    animation: scroll-background 30s linear infinite; /* Apply scrolling animation */
+  }
+  
+  .home-hero::after {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Absolute positioning */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cover entire area */
+    background-color: rgba(4, 64, 20, 0.5); /* Transparent green film */
+    z-index: 1; /* Position above the background image */
+  }
+  
+  .hero-content {
+    position: relative; /* Position relative to the parent */
+    z-index: 2; /* Ensure content appears above the overlay */
+    color: white; /* Text color */
+  }
+  
+  .hero-content h1 {
+    font-family: 'FuturaBold', sans-serif; /* Use Futura Bold */
+    font-weight: bold;
+    font-size: 4rem; /* Adjust size as needed */
+    background-color: rgba(4, 64, 20, 0.8); /* Slightly transparent dark green */
+    padding: 1rem 1.5rem; /* Increase padding */
+    border-radius: 10px; /* Round edges */
+    text-transform: uppercase; /* Make text uppercase */
+  }
+  
+  .hero-content p {
+    font-family: 'FuturaBold', sans-serif; /* Use the same font */
+    font-size: 1.5rem; /* Increase size */
+    background-color: rgba(4, 64, 20, 0.8); /* Slightly transparent dark green */
+    padding: 1rem 1.5rem; /* Increase padding */
+    border-radius: 10px; /* Round edges */
+    margin-top: 1rem; /* Space between title and text */
+  }
+  
+  .subscribe-container {
+    margin-top: 1rem; /* Space above subscribe section */
+    display: flex; /* Use flexbox to align input and button */
+    justify-content: center; /* Center input and button */
+  }
+  
+  .subscribe-input {
+    padding: 1rem; /* Increase padding */
+    font-size: 1.5rem; /* Increase font size */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Round edges */
+    outline: none; /* Remove outline */
+    width: 500px; /* Set a fixed width for the input field */
+    min-width: 250px; /* Optional: minimum width */
+    color: #044014; /* Dark green text color */
+  }
+  
+  .subscribe-input:focus {
+    border-color: #044014; /* Dark green border on focus */
+  }
+  
+  .subscribe-button {
+    padding: 1rem 2rem; /* Increase padding */
+    font-size: 1.5rem; /* Increase font size */
+    background-color: #044014; /* Dark green background */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Round edges */
+    cursor: pointer; /* Pointer cursor */
+    margin-left: 0.5rem; /* Space between input and button */
+  }
+  
+  .subscribe-button:hover {
+    background-color: #033610; /* Darker green on hover */
+  }
+  

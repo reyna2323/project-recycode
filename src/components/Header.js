@@ -1,27 +1,42 @@
-// src/components/Header.js
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png'; // Adjust this path according to your project structure
+import './Header.css'; // Ensure to link the correct CSS file
 
-function Header() {
-  return (
-    <header className="bg-white shadow">
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Project Recycode</h1>
-        {/* Navigation Menu */}
-        <nav>
-          <ul className="flex space-x-4">
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Home</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">About</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Mission</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Impact</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Services</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Blog</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Get Involved</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-800">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
-}
+const Header = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(prev => !prev); // Toggle the menu open state
+    };
+
+    return (
+        <header className="header">
+            <div className="header-content">
+                <div className="logo">
+                    <img src={logo} alt="Project Recycode Logo" className="logo-img" />
+                    <h1>PROJECT RECYCODE</h1>
+                </div>
+                <div className="menu-icon" onClick={toggleMenu}>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+            </div>
+            <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/mission">Our Mission</Link></li>
+                    <li><Link to="/impact">Impact</Link></li>
+                    <li><Link to="/textile-collection">Textile Collection</Link></li>
+                    <li><Link to="/team">Team</Link></li>
+                    <li><Link to="/donate">Donate</Link></li>
+                    <li><Link to="/contact">Contact Us</Link></li>
+                </ul>
+                <button className="close-menu" onClick={toggleMenu}>Close</button>
+            </nav>
+        </header>
+    );
+};
 
 export default Header;
